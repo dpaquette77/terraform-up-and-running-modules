@@ -56,7 +56,7 @@ resource "aws_launch_configuration" "example" {
         create_before_destroy = true
     }
 }
-
+# test
 resource "aws_autoscaling_group" "example" {
     launch_configuration = aws_launch_configuration.example.name
     min_size = var.min_size
