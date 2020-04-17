@@ -29,3 +29,9 @@ variable "max_size" {
     description = "max size of the ASG"
     type = number
 }
+
+variable "asg_custom_tags" {
+    type = map(string)
+    description = "custom tags to add to the ASG"
+    default = {}
+}

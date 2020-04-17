@@ -69,6 +69,14 @@ resource "aws_autoscaling_group" "example" {
         propagate_at_launch = true
     }
 
+    custom "tag" {
+        for_each = var.asg_custom_tags
+        content = {
+            Key = tag.key
+            Value = tag.value
+        }
+    }
+
     target_group_arns = [aws_lb_target_group.mytarget-group.arn]
     health_check_type = "ELB"
 }
