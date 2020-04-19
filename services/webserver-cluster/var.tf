@@ -35,3 +35,8 @@ variable "asg_custom_tags" {
     description = "custom tags to add to the ASG"
     default = {}
 }
+
+variable "webserver_ami" {
+    description = "the ami id to use to create the webserver instance"
+    type = string
+}
