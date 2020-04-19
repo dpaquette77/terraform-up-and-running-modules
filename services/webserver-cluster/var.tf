@@ -41,3 +41,8 @@ variable "webserver_ami" {
     type = string
 }
 
+variable "webserver_text" {
+    description = "the text to put in the index.html"
+    type = string
+    default = "hello world!"
+}

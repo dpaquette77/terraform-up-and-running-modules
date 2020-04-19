@@ -43,10 +43,10 @@ data "template_file" "user_data" {
         db_address = data.terraform_remote_state.db.outputs.address
         db_port = data.terraform_remote_state.db.outputs.port
         server_port = local.backend_http_port
-        webserver_text = "hello world using webserver_text"
+        webserver_text = var.webserver_text
     }
 }
-# bleh
+
 resource "aws_launch_configuration" "example" {
     image_id = var.webserver_ami
     instance_type = var.instance_type
