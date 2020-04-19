@@ -63,6 +63,12 @@ resource "aws_autoscaling_group" "example" {
     min_size = var.min_size
     max_size = var.max_size
     vpc_zone_identifier = data.aws_subnet_ids.default.ids
+    name = "${var.cluster_name}-${aws_launch_configuration.example.name}"
+    min_elb_capacity = var.min_size`
+
+    lifecycle {
+        create_before_destroy = true
+    }
 
     tag {
         key = "Name"
