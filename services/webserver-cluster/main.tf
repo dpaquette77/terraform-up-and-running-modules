@@ -43,6 +43,7 @@ data "template_file" "user_data" {
         db_address = data.terraform_remote_state.db.outputs.address
         db_port = data.terraform_remote_state.db.outputs.port
         server_port = local.backend_http_port
+        webserver_text = "hello world using webserver_text"
     }
 }
 # bleh
